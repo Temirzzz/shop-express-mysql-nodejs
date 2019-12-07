@@ -41,3 +41,33 @@ app.get('/', (req,res) => {
         }
     );    
 });
+
+
+app.get('/cat', (req,res) => {
+    console.log(req.query.id);    
+    let catid = req.query.id;     
+
+    let cat = new Promise((resolve,reject)=>{
+        con.query(
+            'SELECT * FROM category WHERE id='+catid,
+            function (error, result) {
+                if (error) reject (error); 
+                resolve(result);                 
+            });
+    });
+    let goods = new Promise((resolve,reject)=>{
+        con.query(
+            'SELECT * FROM goods WHERE category='+catid,
+            function (error, result) {
+                if (error) reject (error); 
+                resolve(result);                 
+            });
+    });
+
+    Promise.all([cat, goods]).then((value)=>{
+        console.log(value);   
+        res.render('cat', {
+            foo : 4,
+        });        
+    })    
+});
