@@ -1,0 +1,10 @@
+.col.col-md-4
+                .card
+                    a(href="#")
+                        h4.card-title.text-center #{val['name']}
+                        img(src="img/"+val['image'], alt="" class="card-img")
+                        p.card-text.text-center #{val['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&')} rub
+                    ul.card-action
+                        li
+                            .center
+                                button(data-goods_id = val['id']).btn.btn-primary.add-to-card add to cart

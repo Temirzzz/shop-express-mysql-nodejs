@@ -1,5 +1,64 @@
-.color {
-    width: 400px;
-    height: 400px;
-    background-color: tomato;
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.wrap {
+    background: #fff;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+.center {
+    text-align: center;
+}
+.header-size {
+    min-height: 120px;
+}
+.tit-info {   
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 120px;
+}
+/*--------------------cart--------------------*/
+
+.cat-header{
+    text-align: center;
+    margin: 40px auto;
+}
+.card-title {
+    margin: 40px auto;
+}
+.col-lg-12 a{
+    text-decoration: none;
+}
+.card-action li{
+    list-style-type: none;
+}
+.card {
+    border: 1px solid #dedede;
+    margin: 10px auto;
+}
+.card a{
+    text-decoration: none;
+}
+
+.card-img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    max-height: 250px;
+}
+.add-to-card {
+    margin: 20px auto;
+}
+.description {
+    margin: 20px auto;
+
 }

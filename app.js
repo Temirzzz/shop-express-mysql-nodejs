@@ -55,6 +55,7 @@ app.get('/cat', (req,res) => {
                 resolve(result);                 
             });
     });
+
     let goods = new Promise((resolve,reject)=>{
         con.query(
             'SELECT * FROM goods WHERE category='+catid,
@@ -65,9 +66,10 @@ app.get('/cat', (req,res) => {
     });
 
     Promise.all([cat, goods]).then((value)=>{
-        console.log(value);   
+        console.log(value[0]);   
         res.render('cat', {
-            foo : 4,
+            cat : JSON.parse(JSON.stringify(value[0])),
+            goods : JSON.parse(JSON.stringify(value[1]))
         });        
     })    
 });

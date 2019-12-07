@@ -1,1 +1,15 @@
-h2 category
+include header
+
+.wrap
+    .content
+        header.header.bg-primary.header-size
+            include site_header
+        .container
+            .row
+                .col.col-md-12
+                    h2.cat-header #{cat[0]['category']}
+                each val,index in goods
+                    include card
+
+                .description #{cat[0]['description']}
+                                            
