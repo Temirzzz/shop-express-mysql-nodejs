@@ -73,3 +73,21 @@ app.get('/cat', (req,res) => {
         });        
     })    
 });
+
+app.get('/goods', (req,res) => {
+    console.log(req.query.id);    
+    con.query('SELECT * FROM goods WHERE id='+req.query.id, (error, result, fields)=>{
+        if (error) throw error;
+        res.render('goods', {goods: JSON.parse(JSON.stringify(result))});
+    });
+});
+
+app.post('/get-category-list', (req,res) => {
+    //console.log(req.body);
+    con.query('SELECT id, category FROM category', (error, result, fields)=>{
+        if (error) throw error;
+        console.log(result);
+        res.json(result);
+        
+    });
+});

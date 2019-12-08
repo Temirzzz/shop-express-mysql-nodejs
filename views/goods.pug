@@ -1,0 +1,19 @@
+include header
+
+.wrap
+    .content
+        header.header.bg-primary.header-size
+            include site_header
+
+        .container
+            .row
+                .col.col-md-12
+                    h2.panel-title #{goods[0]['name']}
+                .col.col-md-4
+                    img(src="img/"+goods[0]['image'], alt="" class="goods-big-image")
+                .col.col-md-8
+                    p #{goods[0]['description']}
+                    span.success Цена: #{goods[0]['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&')} rub
+                    button.button-succsess.add-to-card(data-goods_id=goods[0]['id']) to cart
+        include nav
+    include footer
