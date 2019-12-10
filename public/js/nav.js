@@ -6,9 +6,7 @@ function showNav () {
 }
 
 function closeNav () {
-    document.querySelector('.site-nav').style.left = '-300px';
-    console.log('jgkjhg');
-    
+    document.querySelector('.site-nav').style.left = '-300px';    
 }
 
 
@@ -20,17 +18,17 @@ function getCategoryList () {
             method : 'POST'
         }
     ).then((response) => {
-        console.log(response);        
+        //console.log(response);        
         return response.text();
     }
     ).then((body) => {
-        console.log(body);
+        //console.log(body);
         showCategoryList(JSON.parse(body));        
     })
 }
 
 function showCategoryList (data) {
-    console.log(data);    
+    //console.log(data);    
     let out = '<ul class="category-list"><li><a href="/">Main</a></li>';
     for (let i = 0; i < data.length; i++){
         out += `<li><a href="/cat?id=${data[i]['id']}">${data[i]['category']}</a></li>`;

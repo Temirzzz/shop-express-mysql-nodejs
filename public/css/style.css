@@ -100,7 +100,16 @@ ul.category-list {
 ul.category-list a{
     color: #424242;
 }
-
+.site-nav a{
+    color: #424242;
+    text-decoration: none;
+}
+.cart-plus {
+    cursor: pointer;
+}
+.cart-minus {
+    cursor: pointer;
+}
 
 /*-------------------------Footer--------------------*/
 .footer {
@@ -108,3 +117,5 @@ ul.category-list a{
     min-height: 250px;
     line-height: 250px;
 }
+
+/*----------------*/
