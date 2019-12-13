@@ -1,0 +1,37 @@
+include header
+
+.wrap
+    .content
+        .site-header
+            include site_header_order
+        .container
+            .row
+                .col.col-md-12
+                    h3.cart-header Cart
+                    #cart-nav
+                .col.col-md-12
+                    h3 Make an order
+                .col.col-md-6
+                    form#lite-shop-order(action='')                                
+                                    .form-group   
+                                        label(for='username') Name
+                                        input(type="text" id='username' class='form-control' placeholder='Enter your name')
+                                    .form-group   
+                                        label(for='phone') Phone
+                                        input(type="text" id='phone' class='form-control' placeholder='8 800 800 8000')
+                                    .form-group   
+                                        label(for='email') Email
+                                        input(type="text" id='email' class='form-control' placeholder='mail@exemple.com')
+                                    .form-group   
+                                        label(for='address') Address
+                                        textarea(type="text" class='form-control' id='address' placeholder='inter your address')
+                                    .form-group   
+                                        label(for='rule')
+                                        input(type="checkbox" id='rule'  value='1')
+                                        span Terms and Conditions
+                                    .form-group.text-right
+                                        button(class='btn btn-primary', type='submit') finish order
+                                        
+        //include nav
+    include footer
+    script(src="js/order.js")
