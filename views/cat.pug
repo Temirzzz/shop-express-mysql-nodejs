@@ -6,13 +6,12 @@ include header
             include site_header
             
         .container
-            .row
-                .col.col-md-12
-                    h2.cat-header #{cat[0]['category']}
-                each val,index in goods
-                    include card
+            .row                
+                h2.cat-header #{cat[0]['category']}
+            each val,index in goods
+                include card
 
-                .description #{cat[0]['description']}
+    .description #{cat[0]['description']}
                                             
     include nav
 include footer

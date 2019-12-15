@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('listen port 3001');    
 });
 
@@ -104,7 +104,7 @@ app.post('/get-category-list', (req,res) => {
 });
 
 app.post('/get-goods-info', (req,res) => {
-    console.log(req.body.key);
+    //console.log(req.body.key);
     if (req.body.key.length !=0){   
         con.query('SELECT id, name, cost FROM goods WHERE id IN ('+req.body.key.join(',')+')', (error, result, fields)=>{
             if (error) throw error;   
@@ -122,7 +122,7 @@ app.post('/get-goods-info', (req,res) => {
 });
 
 app.post('/finish-order', (req,res) => {
-    console.log(req.body);    
+    //console.log(req.body);    
     if (req.body.key.length != 0) {
         let key = Object.keys(req.body.key);
         con.query('SELECT id, name, cost FROM goods WHERE id IN ('+ key.join(',')+')', 

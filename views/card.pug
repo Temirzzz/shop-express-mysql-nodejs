@@ -1,11 +1,12 @@
-.col.col-md-4
-    .card
-        a(href="goods?id="+val['id'])
-            h4.card-title.text-center #{val['name']}
-            .img-wrap
+
+.card
+    a(href="goods?id="+val['id'])
+        h5.card-title.text-center #{val['name']}
+        .img-wrap
+            .wrapper
                 img(src="img/"+val['image'], alt="" class="card-img")
-            p.card-text.text-center #{val['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&')} rub
-        ul.card-action
-            li
-                .center
-                    button(data-goods_id = val['id']).btn.btn-primary.add-to-card add to cart
+        p.card-text.text-center #{val['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&')} rub
+    ul.card-action
+        li
+            .text-center.button-wrap
+                button(data-goods_id = val['id']).btn.btn-primary.add-to-card add to cart

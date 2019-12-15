@@ -19,28 +19,38 @@
     text-align: center;
 }
 
-/*---------------------**----------------------------*/
-
 /*-----------------------header--------------------*/
 
-.header-size {
-    min-height: 120px;
+.header {
+    min-height: 120px;    
 }
-.tit-info {   
-    margin-left: 20%;
+.tit-info {  
+    color: #fff;
     font-size: 48px;
     font-weight: bold;
-    line-height: 100px;
+    margin: 50px 0 50px 15%;
+    display: inline-block;
 }
 
 /*--------------------cart--------------------*/
 
+.card {
+    height: 570px;
+    width: 31.33%;
+    border: 1px solid #dedede;
+    margin: 1%;
+    display: inline-block;
+    float: left;
+}
+
 .cat-header{
     text-align: center;
-    margin: 40px auto;
+    margin: 20px auto;
+    display: block;
 }
 .card-title {
-    margin: 40px auto;
+    margin: 20px auto;
+    width: 80%;
 }
 .col-lg-12 a{
     text-decoration: none;
@@ -48,24 +58,19 @@
 .card-action li{
     list-style-type: none;
 }
-.card {
-    border: 1px solid #dedede;
-    margin: 10px auto;
-}
+
 .card a{
     text-decoration: none;
 }
 
 .img-wrap {
-    margin: 20px auto;
-    width: 160px;
-    height: 260px;
-
+    text-align: center;
+    margin-bottom: 20px;
 }
-.card-img {    
-    width: 100%;
+.wrapper {    
+    display: inline-block;
     height: auto;
-    max-height: 260px;
+    max-width: 100%;   
 }
 .add-to-card {
     margin: 20px auto;
@@ -73,9 +78,18 @@
 .description {
     margin: 20px auto;
 }
+.cart-header {
+    margin: 40px auto;
+    font-size: 30px;
+}
+.order-wrap {
+    width: 40%;
+    margin: 40px 20% 0 20%;
+}
 
 
 /*-------------------------Nav----------------*/
+
 .site-nav {
     width: 300px;
     min-height: 100vh;
@@ -88,16 +102,35 @@
     color: #fff;
     background: #1E90FF;
 }
+.show-nav__but {
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    margin: 50px 50px 50px 10%;
+}
+
 .close-button-div {
     text-align: right;
 }
+.close-nav {
+    border-radius: 100%;
+    border: none;
+    height: 30px;
+    width: 30px;
+    background: red;
+    color: #fff;
+}
+
 .show-nav {
-    margin: 50px 0 0 20%;
+    margin: 50px 0 50px 20%;
 }
-ul.category-list {
-    list-style-type: disc;
+.cat-menu ul {
+    list-style-type: none;
+    margin-bottom: 40px;
 }
+
 ul.category-list a{
+    font-size: 25px;
     color: #424242;
 }
 .site-nav a{
@@ -110,12 +143,145 @@ ul.category-list a{
 .cart-minus {
     cursor: pointer;
 }
+#cart-nav {
+    margin-bottom: 40px;
+}
+
+.card-action {
+    margin: 0;
+    padding: 0;
+}
+/*-----------------singl-goods-page-------------------*/
+
+.goods-wrap {
+    margin: 30px auto;
+}
+.goods-wrap1 {
+    display: block;   
+    width: 100%;
+    height: auto;
+}
+.goods-big-image {
+   width: 30%;
+   height: auto;
+}
+
+.goods-wrap2 {
+    display: inline-block;
+    margin: 30px auto;
+
+}
+.button-succsess {
+    margin: 0 0 0 20px;
+}
+.goods-description {
+    width: 80%;
+    margin: 20px auto;
+}
 
 /*-------------------------Footer--------------------*/
 .footer {
     background: #696969;
-    min-height: 250px;
+    height: 250px;
     line-height: 250px;
+    margin-top: 40px;
 }
 
-/*----------------*/
+
+
+/*----------------------------*/
+
+@media screen and (max-width: 768px){
+    .card {
+        width: 48%;
+        margin: 10px 1%;
+        max-height: 540px;
+    }
+    .description {
+        width: 98%;
+        margin: 10px 1%;
+    }
+    .card-img {
+        max-height: 280px;
+        max-width: 80%;
+    }
+    .cart-header {
+        width: 98%;
+        margin: 10px 1%;
+    }
+    .footer {
+        height: 150px;
+        line-height: 150px;
+    }
+    .card-title {
+        margin: 30px auto;
+        width: 80%;
+        font-size: 20px;
+    }
+    .header {
+        height: 60px;    
+    }
+    .show-nav {
+        margin: 30px 0 20px 10%;
+    }
+    .tit-info {
+        font-size: 45px;
+        font-weight: bold;
+        margin: 30px 0 20px 15%;
+    }
+    h1 a{
+        display: block;
+        width: 100%;
+    }
+    .goods-wrap {
+        width: 95%;
+        margin: 20px 2.5%;
+    }
+    .order-wrap {
+        width: 90%;
+        margin: 40px 5% 0 5%;
+    }
+    
+}
+
+@media screen and (max-width: 576px){
+    .card {
+        width: 90%;
+        margin: 10px 5%;
+        max-height: 430px;
+    }
+    .description {
+        width: 95%;
+        margin: 10px 2.5%;
+        text-align: center;
+    }
+    .card-img {
+        max-height: 200px;
+        max-width: 65%;
+    }
+    .cart-header {
+        width: 98%;
+        margin: 10px 1%;
+    }
+    .footer {
+        height: 100px;
+        line-height: 100px;
+    }
+    .card-title {
+        margin: 30px auto;
+        width: 80%;
+        font-size: 20px;
+    }
+    .header {
+        height: 60px;    
+    }
+    .show-nav {
+        margin: 20px 0 20px 10%;
+    }
+    .tit-info {
+        font-size: 35px;
+        font-weight: bold;
+        margin: 20px 0 20px 15%;
+    }
+    
+}

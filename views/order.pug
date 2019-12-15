@@ -2,16 +2,15 @@ include header
 
 .wrap
     .content
-        .site-header
+        header.header.bg-primary.header-size
             include site_header_order
         .container
             .row
-                .col.col-md-12
+                .order-wrap
                     h3.cart-header Cart
-                    #cart-nav
-                .col.col-md-12
-                    h3 Make an order
-                .col.col-md-6
+                    #cart-nav                
+                    h3.cart-header Make an order
+                .order-wrap
                     form#lite-shop-order(action='')                                
                                     .form-group   
                                         label(for='username') Name

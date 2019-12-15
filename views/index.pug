@@ -2,17 +2,17 @@ include header
 
 .wrap
     .content
-        header.header.bg-primary.header-size
+        header.header.bg-primary
             include site_header
             
         .container
             .row
-                each val2, index2 in cat 
-                    .col.col-lg-12
-                        h2
+                .wrapper
+                    each val2, index2 in cat      
+                        h1.text-center
                             a(href='/cat?id='+val2['id']) #{val2['category']}
-                    each val, index in goods
-                        if val2['id'] == val['category']
-                            include card
+                        each val, index in goods
+                            if val2['id'] == val['category']
+                                    include card
     include nav
 include footer
