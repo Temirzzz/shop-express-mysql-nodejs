@@ -145,12 +145,13 @@ app.post('/finish-order', (req,res) => {
 });
 
 function saveOrder (data, result) {
-    let sql = "INSERT INTO user_info (user_name, user_phone, user_email, address) VALUES ('"+ data.username+"','"+data.phone+"','"+data.email+"','"+data.address+"')";
+    let sql = "INSERT INTO user_info (user_name, user_phone, user_email,address) VALUES ('" + data.username + "', '" + data.phone + "', '" + data.email + "','" + data.address + "')";
     con.query(sql, (error, result) => {
         if (error) throw error;
         console.log('1 user infi saved');        
     })
 }
+
 
 async function sendMail (data, result) {
     let res = '<h2>Order in lite shop</h2>';
