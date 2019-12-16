@@ -23,8 +23,8 @@ app.use(express.json());
 
 
 
-app.listen(3000, () => {
-    console.log('listen port 3001');    
+app.listen(3002, () => {
+    console.log('listen port 3002');    
 });
 
 app.get('/', (req,res) => {
@@ -145,10 +145,20 @@ app.post('/finish-order', (req,res) => {
 });
 
 function saveOrder (data, result) {
-    let sql = "INSERT INTO user_info (user_name, user_phone, user_email,address) VALUES ('" + data.username + "', '" + data.phone + "', '" + data.email + "','" + data.address + "')";
-    con.query(sql, (error, result) => {
+    let sql = "INSERT INTO user_info (user_name, user_phone, user_email,address) VALUES ('" + data.username + "', '" + data.phone + "','" + data.email + "','" + data.address + "')";
+    con.query(sql, (error, resultQuery) => {
         if (error) throw error;
-        console.log('1 user infi saved');        
+        console.log('1 user info saved');     
+        console.log(resultQuery);
+        let userId = resultQuery.insertId;
+        date = new Date()/1000;
+        for (let i = 0; i < result.length; i++){
+            sql = "INSERT INTO shop_order (date, user_id, goods_id, goods_cost, goods_amount, total) VALUES (" + date + "," + userId + "," + result[i]['id'] + "," + result[i]['cost'] + "," + data.key[result[i]['id']] + "," + data.key[result[i]['id']] * result[i]['cost'] + ")";
+            con.query(sql, (error, resultQuery) => {
+                if (error) throw error;
+                console.log('1 goods saved');                
+            })
+        }
     })
 }
 
