@@ -144,6 +144,34 @@ app.post('/finish-order', (req,res) => {
     
 });
 
+app.get('/admin', (req,res) => { 
+    res.render('admin', {});         
+});
+
+app.get('/admin-order', (req,res) => {  
+    con.query(`SELECT
+	shop_order.id as id,
+	shop_order.user_id as user_id,
+    shop_order.goods_id as goods_id,
+    shop_order.goods_cost as goods_cost,
+    shop_order.goods_amount as goods_amount,
+    shop_order.total as total,
+    from_unixtime(date,"%Y-%m-%d %h:%m") as human_date,
+    user_info.user_name as user,
+    user_info.user_phone as phone,
+    user_info.address as address
+FROM
+	shop_order
+LEFT JOIN
+	user_info
+ON shop_order.user_id = user_info.id ORDER BY id DESC`, (error, result, fields)=>{
+        if (error) throw error;
+        console.log(result);        
+        res.render('admin-order', {order: JSON.parse(JSON.stringify(result))});
+    });           
+});
+
+
 function saveOrder (data, result) {
     let sql = "INSERT INTO user_info (user_name, user_phone, user_email,address) VALUES ('" + data.username + "', '" + data.phone + "','" + data.email + "','" + data.address + "')";
     con.query(sql, (error, resultQuery) => {
@@ -203,3 +231,4 @@ async function sendMail (data, result) {
   console.log("PreviewSent: %s", nodemailer.getTestMessageUrl(info));
   return true;
 }
+
