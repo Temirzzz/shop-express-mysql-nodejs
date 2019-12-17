@@ -21,7 +21,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 app.use(express.json());
 
-
+app.use(express.urlencoded());
 
 app.listen(3002, () => {
     console.log('listen port 3002');    
@@ -171,6 +171,39 @@ ON shop_order.user_id = user_info.id ORDER BY id DESC`, (error, result, fields)=
     });           
 });
 
+/* login-form ==============================================*/
+
+app.get('/login', (req,res) => { 
+    res.render('login', {});         
+});
+
+app.post('/login', (req,res) => { 
+    //console.log(req.body);
+    con.query(
+        'SELECT * FROM user WHERE login="' + req.body.login + '"and password="' + req.body.password + '"',
+        function (error, result) {
+            if (error) reject (error); 
+            //console.log(result.length);          
+            if (result.length == 0) {
+                console.log('Error, user not found');  
+                res.redirect('/login');  // если не успешно, перенаправляем в login              
+            }  
+            else {
+                result = JSON.parse(JSON.stringify(result));   
+                 res.cookie('hash', 'blablabla');
+                 /**
+                  * Записываем в базу данных 
+                  * */
+                 let sql = "UPDATE user SET hash = 'blablabla' WHERE id=" + result[0]['id'];
+                 con.query(sql, (error, resultQuery) => {
+                    if (error) throw error;
+                    res.redirect('/admin'); // если успешно, перенаправляем в admin
+                 });
+                       
+        };        
+    });
+});
+
 
 function saveOrder (data, result) {
     let sql = "INSERT INTO user_info (user_name, user_phone, user_email,address) VALUES ('" + data.username + "', '" + data.phone + "','" + data.email + "','" + data.address + "')";
@@ -231,4 +264,5 @@ async function sendMail (data, result) {
   console.log("PreviewSent: %s", nodemailer.getTestMessageUrl(info));
   return true;
 }
+
 

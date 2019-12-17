@@ -1,0 +1,15 @@
+include header
+.container
+    .row
+        .col.col-lg-4.col-md-4.mx-auto.mt-4
+            form(action="/login" method="POST")
+                .form-group
+                    label(for="login" class="admin-label" ) Login: 
+                    input(name="login" id="login" class="form-control" value="Tmzzz" placeholder="Enter your login")
+                .form-group
+                    label(for="password" class="admin-password") Password: 
+                    input(type="password" name="password" id="password" class="form-control" value="111" placeholder="Enter your password")
+                .form-group
+                    button(class='btn btn-primary', type='submit') Send
+
+//script(src="js/login.js")

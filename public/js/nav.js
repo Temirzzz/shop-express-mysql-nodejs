@@ -9,9 +9,6 @@ function closeNav () {
     document.querySelector('.site-nav').style.left = '-300px';    
 }
 
-
-
-
 function getCategoryList () {
     fetch('/get-category-list', 
         {
