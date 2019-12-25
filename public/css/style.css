@@ -167,12 +167,8 @@ ul.category-list a{
    height: auto;
 }
 .goods-little-image {
-    max-width: 90%;
-    margin: 5%;
-}
-.goods-wrap3 {
-    max-width: 46%;
-    margin: 1%;
+    max-width: 95%;
+    margin: 20px 2.5%;
 }
 
 .goods-wrap2 {
@@ -288,6 +284,7 @@ ul.category-list a{
         width: 90%;
         margin: 40px 5% 0 5%;
     }
+   
     
 }
 

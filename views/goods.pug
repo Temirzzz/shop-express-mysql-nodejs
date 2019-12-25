@@ -14,7 +14,7 @@ include header
                     img(src="/img/"+goods[0]['image'], alt="" class="goods-big-image")
                     .row
                         each val,index in goods_images
-                            .goods-wrap3.text-center
+                            .col-4.col-md-6.col-lg-4
                                 img(src="/img/"+ val['path'], alt="" class="goods-little-image")
 
                 .goods-wrap2.text-center
