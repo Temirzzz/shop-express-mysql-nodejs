@@ -26,7 +26,7 @@ function getCategoryList () {
 
 function showCategoryList (data) {
     //console.log(data);    
-    let out = '<ul class="category-list"><li><a href="/">Main</a></li>';
+    let out = '<ul class="category-list"><li><a href="/">Главная</a></li>';
     for (let i = 0; i < data.length; i++){
         out += `<li><a href="/cat?id=${data[i]['id']}">${data[i]['category']}</a></li>`;
     }

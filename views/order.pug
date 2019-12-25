@@ -7,29 +7,29 @@ include header
         .container
             .row
                 .order-wrap
-                    h3.cart-header Cart
+                    h3.cart-header Товары
                     #cart-nav                
-                    h3.cart-header Make an order
+                    h3.cart-header Сделать заказ
                 .order-wrap
                     form#lite-shop-order(action='')                                
                                     .form-group   
-                                        label(for='username') Name
-                                        input(type="text" id='username' class='form-control' placeholder='Enter your name')
+                                        label(for='username') Имя
+                                        input(type="text" id='username' class='form-control' placeholder='Введите ваше имя')
                                     .form-group   
-                                        label(for='phone') Phone
+                                        label(for='phone') Телефон
                                         input(type="text" id='phone' class='form-control' placeholder='8 800 800 8000')
                                     .form-group   
                                         label(for='email') Email
                                         input(type="text" id='email' class='form-control' placeholder='mail@exemple.com')
                                     .form-group   
-                                        label(for='address') Address
-                                        textarea(type="text" class='form-control' id='address' placeholder='inter your address')
+                                        label(for='address') Адрес
+                                        textarea(type="text" class='form-control' id='address' placeholder='Введите ваш адрес')
                                     .form-group   
                                         label(for='rule')
                                         input(type="checkbox" id='rule'  value='1')
-                                        span Terms and Conditions
+                                        span Условия и соглашения
                                     .form-group.text-right
-                                        button(class='btn btn-primary', type='submit') finish order
+                                        button(class='btn btn-primary', type='submit') Сделать заказ
                                         
         //include nav
     include footer

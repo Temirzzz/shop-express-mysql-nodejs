@@ -31,7 +31,7 @@ app.listen(3002, () => {
 
 
 app.use(function (req, res, next) {
-    console.log(req);
+    //console.log(req);
     if (req.originalUrl == '/admin' || req.originalUrl == '/admin-order') {
         admin(req, res, con, next);
     }
@@ -100,7 +100,7 @@ app.get('/cat', (req,res) => {
 });
 
 app.get('/goods', (req,res) => {
-    //console.log(req.query.id);    
+    //console.log(req.query);    
     con.query('SELECT * FROM goods WHERE id='+req.query.id, (error, result, fields)=>{
         if (error) throw error;
         res.render('goods', {goods: JSON.parse(JSON.stringify(result))});
@@ -108,7 +108,7 @@ app.get('/goods', (req,res) => {
 });
 
 app.get('/order', (req,res) => {     
-        res.render('order');
+    res.render('order');
 });
 
 app.post('/get-category-list', (req,res) => {
@@ -139,7 +139,7 @@ app.post('/get-goods-info', (req,res) => {
 });
 
 app.post('/finish-order', (req,res) => {
-    console.log(req.body);    
+    //console.log(req.body);    
     if (req.body.key.length != 0) {
         let key = Object.keys(req.body.key);
         con.query('SELECT id, name, cost FROM goods WHERE id IN ('+ key.join(',')+')', 
