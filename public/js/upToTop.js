@@ -4,7 +4,7 @@ let timer;
 
 
 upBtn.onclick = function toTop() {
-    console.log(window.pageYOffset);
+    //console.log(window.pageYOffset);
     scroled = window.pageYOffset;    
     //window.scrollTo(0, 0);
     scrollToTop();
@@ -13,8 +13,8 @@ upBtn.onclick = function toTop() {
 function scrollToTop () {
     if (scroled > 0) {
         window.scrollTo(0, scroled);
-        scroled = scroled -100; // скорость прокрутки
-        timer = setTimeout(scrollToTop, 100);
+        scroled = scroled -70; // скорость прокрутки
+        timer = setTimeout(scrollToTop, 70);
     }
     else {
         clearTimeout(timer);

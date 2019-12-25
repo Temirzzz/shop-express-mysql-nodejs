@@ -35,7 +35,7 @@ function ajaxGetGoodsInfo () {
         return response.text();
     })
     .then((body) => {
-        console.log(body);      
+        //console.log(body);      
         showCart(JSON.parse(body));
     })
 }
