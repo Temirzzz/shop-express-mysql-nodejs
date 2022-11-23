@@ -9,7 +9,7 @@
   "author": "Tmzzz",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "express": "^4.17.1",
     "nodemon": "^2.0.2",
     "pug": "^2.0.4"
